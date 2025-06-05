@@ -3,18 +3,30 @@
 //
 // See https://aka.ms/devcontainer.json for more information.
 {
-	"name": "Gitpod",
-	// Use "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
-	// instead of the build to use a pre-built image.
+	"name": "COBOL Development Environment",
 	"build": {
         "context": ".",
         "dockerfile": "Dockerfile"
-    }
-	// Features add additional features to your environment. See https://containers.dev/features
-	// Beware: features are not supported on all platforms and may have unintended side-effects.
-	// "features": {
-    //   "ghcr.io/devcontainers/features/docker-in-docker": {
-    //     "moby": false
-    //   }
-    // }
+    },
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bitlang.cobol",
+				"broadcom.cobol-language-support"
+			],
+			"settings": {
+				"files.associations": {
+					"*.cbl": "COBOL",
+					"*.cob": "COBOL",
+					"*.copy": "COBOL",
+					"*.cpy": "COBOL",
+					"*.pco": "COBOL"
+				},
+				"coboleditor.tabstops": "8,12,16",
+				"coboleditor.margin_a": 7,
+				"coboleditor.margin_b": 11
+			}
+		}
+	},
+	"remoteUser": "vscode"
 }
